@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Users.Models;
+
 namespace Users
 {
     public class Program
@@ -12,6 +15,10 @@ namespace Users
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<Context>(opts =>
+            {
+                opts.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
+            });
 
             var app = builder.Build();
 
