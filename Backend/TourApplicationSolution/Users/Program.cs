@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Users.Models;
+using SignInAndSignUp.Models;
 
-namespace Users
+namespace SignInAndSignUp
 {
     public class Program
     {

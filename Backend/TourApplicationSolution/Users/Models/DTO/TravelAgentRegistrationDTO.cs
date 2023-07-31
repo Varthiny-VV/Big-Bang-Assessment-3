@@ -1,4 +1,4 @@
-﻿namespace Users.Models.DTO
+﻿namespace SignInAndSignUp.Models.DTO
 {
     public class TravelAgentRegistrationDTO : TravelAgent
     {

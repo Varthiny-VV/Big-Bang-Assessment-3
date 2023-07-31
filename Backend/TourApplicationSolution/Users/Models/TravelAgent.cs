@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Users.Models
+namespace SignInAndSignUp.Models
 {
     public class TravelAgent
     {

@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Users.Models
+namespace SignInAndSignUp.Models
 {
     public class Context : DbContext
     {
