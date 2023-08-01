@@ -12,8 +12,8 @@ using SignInAndSignUp.Models;
 namespace SignInAndSignUp.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230731104011_init")]
-    partial class init
+    [Migration("20230801073123_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace SignInAndSignUp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Users.Models.TravelAgent", b =>
+            modelBuilder.Entity("SignInAndSignUp.Models.TravelAgent", b =>
                 {
                     b.Property<int>("TravelAgentId")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace SignInAndSignUp.Migrations
                     b.ToTable("TravelAgents");
                 });
 
-            modelBuilder.Entity("Users.Models.Traveller", b =>
+            modelBuilder.Entity("SignInAndSignUp.Models.Traveller", b =>
                 {
                     b.Property<int>("TravellerId")
                         .ValueGeneratedOnAdd()
@@ -76,6 +76,9 @@ namespace SignInAndSignUp.Migrations
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -100,7 +103,7 @@ namespace SignInAndSignUp.Migrations
                     b.ToTable("Travellers");
                 });
 
-            modelBuilder.Entity("Users.Models.Users", b =>
+            modelBuilder.Entity("SignInAndSignUp.Models.Users", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -125,18 +128,18 @@ namespace SignInAndSignUp.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Users.Models.TravelAgent", b =>
+            modelBuilder.Entity("SignInAndSignUp.Models.TravelAgent", b =>
                 {
-                    b.HasOne("Users.Models.Users", "Users")
+                    b.HasOne("SignInAndSignUp.Models.Users", "Users")
                         .WithMany()
                         .HasForeignKey("UsersUserId");
 
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("Users.Models.Traveller", b =>
+            modelBuilder.Entity("SignInAndSignUp.Models.Traveller", b =>
                 {
-                    b.HasOne("Users.Models.Users", "Users")
+                    b.HasOne("SignInAndSignUp.Models.Users", "Users")
                         .WithMany()
                         .HasForeignKey("UsersUserId");
 

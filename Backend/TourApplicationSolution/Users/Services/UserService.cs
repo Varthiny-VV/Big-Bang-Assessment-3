@@ -9,12 +9,12 @@ namespace SignInAndSignUp.Services
 {
     public class UserService : IManageUser
     {
-        private IRepo<string, Users> _userRepo;
-        private readonly IRepo<string, TravelAgent> _travelAgentRepo;
-        private readonly IRepo<string, Traveller> _travellerRepo;
+        private IRepo<Users,string> _userRepo;
+        private readonly IRepo<TravelAgent,string> _travelAgentRepo;
+        private readonly IRepo<Traveller, string> _travellerRepo;
         private IGenerateToken _tokenService;
 
-        public UserService(IRepo<string, Users> userrepo, IRepo<string, TravelAgent> travelAgentRepo, IRepo<string, Traveller> travellerRepo, IGenerateToken tokenService)
+        public UserService(IRepo<Users, string> userrepo, IRepo<TravelAgent, string> travelAgentRepo, IRepo<Traveller, string> travellerRepo, IGenerateToken tokenService)
         {
             _userRepo = userrepo;
             _travelAgentRepo = travelAgentRepo;
@@ -45,9 +45,9 @@ namespace SignInAndSignUp.Services
 
         }
 
-        public async Task<UserDTO?> TravelAgentRegistrationDTO(TravelAgentRegistrationDTO travelAgentRegistration)
+        public async Task<UserDTO?> TravelAgentRegistration(TravelAgentRegistrationDTO travelAgentRegistration)
         {
-            UserDTO user = null;
+            UserDTO user = null; 
             var hmac = new HMACSHA512();
             travelAgentRegistration.Users = new Users();
             travelAgentRegistration.Users.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(travelAgentRegistration.PasswordClear));
@@ -67,5 +67,31 @@ namespace SignInAndSignUp.Services
             }
             return user;
         }
+
+        public async Task<UserDTO?> TravellerRegistration(TravellerRegistrationDTO travellerRegistration)
+        {
+            UserDTO? user = null;
+            var hmac = new HMACSHA512();
+            travellerRegistration.Users = new Users();
+            travellerRegistration.Users.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(travellerRegistration.PasswordClear));
+            travellerRegistration.Users.PasswordKey = hmac.Key;
+            travellerRegistration.Users.EmailId = travellerRegistration.Email;
+            travellerRegistration.Users.Role = "Admin";
+            var userResult = await _userRepo.Add(travellerRegistration.Users);
+
+            //var travellerResult = await _travellerRepo.Add(travellerRegistration);
+            if (userResult != null) // && travellerResult != null
+            {
+                user = new UserDTO(); 
+                user.UserId = userResult.UserId;
+                user.Role = userResult.Role;
+                user.EmailId= userResult.EmailId;
+                //user.EmailId = travellerResult.Email;
+                user.Token = _tokenService.GenerateToken(user);
+            }
+            return user;
+        }
+
+       
     }
 }
