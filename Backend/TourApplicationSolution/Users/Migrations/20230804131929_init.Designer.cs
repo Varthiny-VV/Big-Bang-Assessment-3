@@ -12,8 +12,8 @@ using SignInAndSignUp.Models;
 namespace SignInAndSignUp.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230801073123_Init")]
-    partial class Init
+    [Migration("20230804131929_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

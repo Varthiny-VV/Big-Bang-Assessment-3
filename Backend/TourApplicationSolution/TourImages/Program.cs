@@ -1,10 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TourPackages.Interfaces;
-using TourPackages.Models;
-using TourPackages.Services;
+using TourImages.Models;
 
-
-namespace TourPackages
+namespace TourImages
 {
     public class Program
     {
@@ -18,13 +15,11 @@ namespace TourPackages
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<Context>(opts =>
+            builder.Services.AddDbContext<TourImageContext>(opts =>
             {
-                opts.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
+                opts.UseSqlServer(builder.Configuration.GetConnectionString("Conn"));
             });
-            builder.Services.AddScoped<IRepo<int, Itinerary>, ItineraryRepo>();
-            builder.Services.AddScoped<IRepo<int, Package>, PackageRepo>();
-            builder.Services.AddScoped<IRepo<int, AgentContact>, ContactDetailsRepo>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
