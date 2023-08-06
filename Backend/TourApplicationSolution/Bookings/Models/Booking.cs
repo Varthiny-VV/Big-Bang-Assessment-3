@@ -8,7 +8,6 @@ namespace Bookings.Models
         public int BookingId { get; set; }
         public int PackageId { get; set; }
         public int? TravelAgentId { get; set; }
-        public string? Type { get; set; }
         public int? AvailableCount { get; set; }
         public string? TravellerEmail { get; set; }
         public int TravellerCount { get; set; }
