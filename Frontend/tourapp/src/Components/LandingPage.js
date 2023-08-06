@@ -8,10 +8,10 @@ function LandingPage(){
         <nav>
             <h2 class="logo">T||A</h2>
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">ADMIN</a></li>
+                <li><a href="#">TRAVELLER</a></li>
+                <li><a href="#">TRAVEL AGENT</a></li>
+                <li><a href="#">CONTACT US</a></li>
             </ul>
             <img src={process.env.PUBLIC_URL + '/images/profile.jpeg'} alt="profile"/>
         </nav>

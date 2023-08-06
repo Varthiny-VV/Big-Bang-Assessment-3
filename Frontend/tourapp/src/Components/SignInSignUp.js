@@ -13,9 +13,9 @@ function SignInSignUp(){
     };
     return(
         <div className='signin-body'>
-            <header className='header'>
+            {/* <header className='header'>
             <nav >
-            {/* <h2 class="logo">T||A</h2> */}
+            <h2 class="logo">T||A</h2>
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">ABOUT</a></li>
@@ -24,11 +24,11 @@ function SignInSignUp(){
             </ul>
             <img src={process.env.PUBLIC_URL + '/images/profile.jpeg'} alt="profile"/>
         </nav>
-        {/* <form action="" class="search-bar">
+        <form action="" class="search-bar">
        <input type="text" placeholder="Search..."/>
        <button><i class='bx bx-search'></i></button>
-    </form> */}
-            </header>
+    </form>
+            </header> */}
     <div class="background"></div>
     <div class="container">
         <div class="item">
@@ -49,7 +49,7 @@ function SignInSignUp(){
         </div>
         <div class="login-section">
             <div class="form-box login">
-                <form action="">
+                <div action="">
                     <h2>Sign In</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
@@ -70,9 +70,9 @@ function SignInSignUp(){
                         <p>Create A New Traveller Account? <a href="#" class="register-link" onClick={handleRegisterClick}>Sign Up</a></p><br/>
                         
                     </div>
-                </form>
+                </div>
             </div>
-            <div class="form-box register">
+            {/* <div class="form-box register">
                 <form action="">
 
                     <h2>Sign Up</h2>
@@ -101,7 +101,7 @@ function SignInSignUp(){
                         
                     </div>
                 </form>
-            </div>
+            </div> */}
 
         </div>
     </div>
