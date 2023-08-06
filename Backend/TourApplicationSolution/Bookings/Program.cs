@@ -1,9 +1,4 @@
-using Feedbacks.Interfaces;
-using Feedbacks.Models;
-using Feedbacks.Services;
-using Microsoft.EntityFrameworkCore;
-
-namespace Feedbacks
+namespace Bookings
 {
     public class Program
     {
@@ -17,11 +12,6 @@ namespace Feedbacks
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<Context>(opts =>
-            {
-                opts.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
-            });
-            builder.Services.AddScoped<IRepo<Feedback>, FeedbackServices>();
 
             var app = builder.Build();
 

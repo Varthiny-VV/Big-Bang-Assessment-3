@@ -6,11 +6,11 @@ namespace Feedbacks.Models
     {
         [Key]
         public int FeedbackID { get; set; }
-        public int? TravellerID { get; set; }
-        public int? TourPackageId { get; set; }
+        public int TravellerId { get; set; }
+        public int? PackageId { get; set; }
+        [Required]
         public string? Comment { get; set; }
-        public int? AgencyId { get; set; }
-        public int? Ratings { get; set; }
-        public DateTime? FeedbackDate { get; set; }
+        [Required]
+        public double? Ratings { get; set; }
     }
 }

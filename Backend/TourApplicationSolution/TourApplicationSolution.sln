@@ -5,9 +5,13 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignInAndSignUp", "Users\SignInAndSignUp.csproj", "{DF865ADC-0E49-4553-A163-EC87969D425A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourPackages", "TourPackages\TourPackages.csproj", "{AFAC71D6-5EA0-4D28-AB89-D29210570D11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourPackages", "TourPackages\TourPackages.csproj", "{AFAC71D6-5EA0-4D28-AB89-D29210570D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourImages", "TourImages\TourImages.csproj", "{BE94131D-E694-4084-B28C-C5B7CC674A43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourImages", "TourImages\TourImages.csproj", "{BE94131D-E694-4084-B28C-C5B7CC674A43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feedbacks", "Feedback\Feedbacks.csproj", "{6AEB804C-61E3-4502-948F-12D028924FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookings", "Bookings\Bookings.csproj", "{B0638ADD-1ED6-42A6-A41E-CC19314339BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{BE94131D-E694-4084-B28C-C5B7CC674A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE94131D-E694-4084-B28C-C5B7CC674A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE94131D-E694-4084-B28C-C5B7CC674A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AEB804C-61E3-4502-948F-12D028924FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AEB804C-61E3-4502-948F-12D028924FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AEB804C-61E3-4502-948F-12D028924FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AEB804C-61E3-4502-948F-12D028924FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
