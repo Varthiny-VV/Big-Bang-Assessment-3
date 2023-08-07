@@ -1,34 +1,35 @@
 import React from "react";
 import './TravellerRegister.css';
+import {Link} from "react-router-dom";
 
 function TravellerRegister(){
     return(
-        <div className='agent_register_body'>
+        <div className='traveller_register_body'>
             <body>
-    <section class="container">
+    <div class="traveller_container">
       <header className='registration_header'>Registration Form</header>
-      <div action="#" class="form">
+      <div action="#" class="traveller_register_form">
         <div class="input-box">
-          <label>Full Name</label>
+          
           <input type="text" placeholder="Enter full name" required />
         </div>
         <div class="input-box">
-          <label>Email Address</label>
+       
           <input type="text" placeholder="Enter email address" required />
         </div>
-        <div class="column">
+        <div class="traveller_column">
           <div class="input-box">
-            <label>Phone Number</label>
+           
             <input type="number" placeholder="Enter phone number" required />
           </div>
           <div class="input-box">
-            <label>Birth Date</label>
+           
             <input type="date" placeholder="Enter birth date" required />
           </div>
         </div>
         
         <div class="input-box address">
-          <label>Address</label>
+        
           <input type="text" placeholder="Enter street address" required />
           
         </div>
@@ -49,9 +50,15 @@ function TravellerRegister(){
             </div>
           </div>
         </div>
-        <button>Submit</button>
+        <button className="traveller_register_btn">Submit</button>
+        <div className="Account_login"><br/>
+        <p>
+            Already have an account?{" "}
+            <Link to="/login">Login here</Link>
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   </body>
         </div>
     );

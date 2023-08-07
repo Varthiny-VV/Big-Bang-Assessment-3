@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import ScrollReveal from 'scrollreveal';
+import { Link } from 'react-router-dom';
 
 function HomePage(){
    const [showMenu, setShowMenu] = useState(false);
@@ -110,13 +111,13 @@ function HomePage(){
  
   
     return(
-       <html>
-           <body>
+       <html className='home__html'>
+           <body className='home__body'>
       {/* <!--==================== HEADER ====================--> */}
       <header class={`header ${blurHeader ? 'blur-header' : ''}`} id="header">
-         <nav class="nav container">
+         <nav class="nav nav_container">
             <a href="#" class="nav__logo">
-               T||A
+              &nbsp; &nbsp; &nbsp;KANINI TOURISM
             </a>
 
             <div class={`nav__menu ${showMenu ? 'show-menu' : ''}`} id="nav-menu">
@@ -153,9 +154,9 @@ function HomePage(){
       <main class="main">
          {/* <!--==================== HOME ====================--> */}
          <section class="home section" id="home">
-            <img src={process.env.PUBLIC_URL + '/images/home-bg.jpg'} alt="" class="home__bg"></img>
+            <img src={process.env.PUBLIC_URL + '/images/home-bg.jpg'} alt="" class="home__bg home__img"></img>
             <div className="home__shadow"></div>
-            <div className="home__container container grid">
+            <div className="home__container home_container grid">
                <div className="home__data">
                  <h3 className="home__subtitle">
                   Welcome To Travel
@@ -169,31 +170,29 @@ function HomePage(){
                      paradises, islands, mountains and much 
                      more, get your trip now.
                   </p>
-                  <a href='#' className='button'>
-                     Start Your jorney <i className='ri-arrow-right-line'></i>
-                  </a>
+                  <Link to="/landing" className="button">Start Your Journey <i className="ri-arrow-right-line"></i></Link>
                </div>
                <div className='home__cards grid'>
                   <article className='home__card'>
-                     <img src={process.env.PUBLIC_URL + '/images/Dubai.jpg'} alt="" className='home__card-img'></img>
+                     <img src={process.env.PUBLIC_URL + '/images/Dubai.jpg'} alt="" className='home__card-img home__img'></img>
                      <h3 className='home__card-title'>India</h3>
                      <div className='home__card-shadow'></div>
                   </article>
 
                   <article className='home__card'>
-                     <img src={process.env.PUBLIC_URL + '/images/Paris.jpg'} alt="" className='home__card-img'></img>
+                     <img src={process.env.PUBLIC_URL + '/images/Paris.jpg'} alt="" className='home__card-img home__img'></img>
                      <h3 className='home__card-title'>Paris</h3>
                      <div className='home__card-shadow'></div>
                   </article>
 
                   <article className='home__card'>
-                     <img src={process.env.PUBLIC_URL + '/images/Italy.jpg'} alt="" className='home__card-img'></img>
+                     <img src={process.env.PUBLIC_URL + '/images/Italy.jpg'} alt="" className='home__card-img home__img'></img>
                      <h3 className='home__card-title'>Italy</h3>
                      <div className='home__card-shadow'></div>
                   </article>
 
                   <article className='home__card'>
-                     <img src={process.env.PUBLIC_URL + '/images/ROme.jpg'} alt="" className='home__card-img'></img>
+                     <img src={process.env.PUBLIC_URL + '/images/ROme.jpg'} alt="" className='home__card-img home__img'></img>
                      <h3 className='home__card-title'>Rome</h3>
                      <div className='home__card-shadow'></div>
                   </article>
@@ -205,7 +204,7 @@ function HomePage(){
          {/* <!--==================== ABOUT ====================--> */}
          <section class="about section" id="about">
             <div className='about section' id='about'>
-               <div className='about__container container grid'>
+               <div className='about__container home_container grid'>
                   <div className='about__data'>
                      <h2 className='section__title'>
                         Learn More <br/>
@@ -225,7 +224,7 @@ function HomePage(){
                      </a>
                   </div>
                   <div className='about__image'>
-                     <img src={process.env.PUBLIC_URL + '/images/About.jpg'} alt='' className='about__img'></img>
+                     <img src={process.env.PUBLIC_URL + '/images/About.jpg'} alt='' className='about__img home__img'></img>
                      <div className='about__shadow'></div>
                   </div>
                </div>
@@ -242,7 +241,7 @@ function HomePage(){
             <div className='popular__container container grid'>
          <article className='popular__card'>
             <div className='popular__image'>
-               <img src={process.env.PUBLIC_URL + '/images/Switzerland.jpg'} alt='' className='popular__img'></img>
+               <img src={process.env.PUBLIC_URL + '/images/Switzerland.jpg'} alt='' className='popular__img home__img'></img>
                <div className='popular__shadow'></div>
             </div>
             <h2 className='popular__title'>
@@ -257,7 +256,7 @@ function HomePage(){
 
          <article className='popular__card'>
             <div className='popular__image'>
-               <img src={process.env.PUBLIC_URL + '/images/Singapore.jpg'} alt='' className='popular__img'></img>
+               <img src={process.env.PUBLIC_URL + '/images/Singapore.jpg'} alt='' className='popular__img home__img'></img>
                <div className='popular__shadow'></div>
             </div>
             <h2 className='popular__title'>
@@ -272,7 +271,7 @@ function HomePage(){
 
          <article className='popular__card'>
             <div className='popular__image'>
-               <img src={process.env.PUBLIC_URL + '/images/Japan.jpg'} alt='' className='popular__img'></img>
+               <img src={process.env.PUBLIC_URL + '/images/Japan.jpg'} alt='' className='popular__img home__img'></img>
                <div className='popular__shadow'></div>
             </div>
             <h2 className='popular__title'>
@@ -293,7 +292,7 @@ function HomePage(){
          <section class="explore section" id="explore">
             <div className='explore__container'>
                <div className='explore__image'>
-                  <img src={process.env.PUBLIC_URL + '/images/explore.jpg'} alt='' className='explore__img'></img>
+                  <img src={process.env.PUBLIC_URL + '/images/explore.jpg'} alt='' className='explore__img home__img'></img>
                   <div className='explore__shadow'></div>
                   </div>
               <div className='explore__content container grid'>
@@ -311,7 +310,7 @@ function HomePage(){
                   </p>
                </div>
                <div className='explore__user'>
-                  <img src={process.env.PUBLIC_URL + '/images/profile.jpeg'} alt='' className='explore__profile'></img>
+                  <img src={process.env.PUBLIC_URL + '/images/profile.jpeg'} alt='' className='explore__profile home__img'></img>
                   <span class="explore__name">VV</span>
                </div>
               </div>
@@ -330,14 +329,14 @@ function HomePage(){
                      Get up to date with the latest travel and information from us.
                   </p>
                   <div actions='' className='join__from'>
-                     <input type='email' placeholder='Enter your email' className="join__input"></input>
+                     <input type='email' placeholder='Enter your email' className="join__input home__img"></input>
                      <button className='join__button button'>
                         Subscribe Our Newsletter<i className='ri-arrow-right-line'></i>
                      </button>
                   </div>
                </div>
                <div className='join__image'>
-                  <img src={process.env.PUBLIC_URL + '/images/join.jpg'} alt='' className='join__img'></img>
+                  <img src={process.env.PUBLIC_URL + '/images/join.jpg'} alt='' className='join__img home__img'></img>
                   <div className='join__shadow'></div>
                </div>
             </div>

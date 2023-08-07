@@ -45,17 +45,17 @@
     margin:0;
 }
 
-html{
+.home__html{
     scroll-behavior: smooth;
 }
 
-body,button,input{
+.home__body,button,input{
     font-family:var(--body-font);
     font-size:var(--normal-font-size);
     color:var(--text-color);
 }
 
-body{
+.home__body{
     background-color:var(--body-color);
 }
 button,input{
@@ -78,12 +78,12 @@ a{
 
 /* /=============== REUSABLE CSS CLASSES ===============/ */
 
-img{
+.home__img{
     display:block;
     max-width:100%;
     height:auto;
 }
-.container{
+ .home_container{
     max-width:1120px;
     margin-inline:1.5rem;
 
@@ -92,7 +92,7 @@ img{
     display:grid;
     gap:1.5rem;
 }
-.section{
+ .section{
     padding-block:5rem 1rem;
 }
 
@@ -232,7 +232,7 @@ img{
   height:800px;
   background:linear-gradient(180deg,hsla(0,0%,0%,0) 58%,hsl(0,0%,0%)78%);
 }
-.home__container{
+.home_container{
   position: relative;
   padding-top: 3rem;
   row-gap: 3rem;
@@ -304,10 +304,6 @@ img{
     transform: translateX(2.5rem);
   }
 
-   
-
-
-  
   /* /=============== ABOUT ===============/ */
   .about__container{
     row-gap:3rem;
@@ -592,7 +588,7 @@ transition: bottom .4s, transform .4s;
   /=============== BREAKPOINTS ===============/ */
   /* For small devices */
   @media screen and (max-width: 340px){
-    .container{
+    .home_container{
       margin-inline:1rem;
     }
     .footer__data{
@@ -602,7 +598,7 @@ transition: bottom .4s, transform .4s;
   
   /* For medium devices */
   @media screen and (min-width: 576px){
-    .home__container,
+    .home_container,
     .about__container,
     .explore__content,
     .join__container{
@@ -671,7 +667,7 @@ transition: bottom .4s, transform .4s;
   }
 
   @media screen and (min-width: 1152px){
-    .container{
+    .home_container{
       margin-inline: auto;
     }
     .section{
@@ -685,7 +681,7 @@ transition: bottom .4s, transform .4s;
       backdrop-filter: blur(25px);
       -webkit-backdrop-filter: blur(25px);
     }
-    .home__container{
+    .home_container{
       grid-template-columns: initial;
       justify-content: initial;
       row-gap:4rem;

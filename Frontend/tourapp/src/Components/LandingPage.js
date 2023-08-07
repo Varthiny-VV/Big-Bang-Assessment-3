@@ -1,24 +1,25 @@
 import React from 'react';
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 
 function LandingPage(){
     return(
         <div className='Landing-body'>
              <div class="glass">
         <nav>
-            <h2 class="logo">T||A</h2>
+            <h2 class="logo">KANINI TOURISM</h2>
             <ul>
-                <li><a href="#">ADMIN</a></li>
-                <li><a href="#">TRAVELLER</a></li>
-                <li><a href="#">TRAVEL AGENT</a></li>
-                <li><a href="#">CONTACT US</a></li>
+                <li><Link to="/login">ADMIN</Link></li>
+                <li><Link to="/login">TRAVELLER</Link></li>
+                <li><Link to="/login">TRAVEL AGENT</Link></li>
+                <li><Link to="/contactus">CONTACT US</Link></li>
             </ul>
-            <img src={process.env.PUBLIC_URL + '/images/profile.jpeg'} alt="profile"/>
+            {/* <img src={process.env.PUBLIC_URL + '/images/profile.jpeg' } alt="profile" className='landing_img'/> */}
         </nav>
 
         <div>
-            <h3>it's time to</h3>
-            <h1>TRAVEL</h1>
+            <h3 className='landing_h3'>it's time to</h3>
+            <h1 className='landing_h1'>TRAVEL</h1>
         </div>
        <div class="icons">
            <ul>

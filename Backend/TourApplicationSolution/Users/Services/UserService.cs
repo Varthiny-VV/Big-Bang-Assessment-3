@@ -57,7 +57,7 @@ namespace SignInAndSignUp.Services
             travelAgentRegistration.Users.Role = "Agent";
             var userResult = await _userRepo.Add(travelAgentRegistration.Users);
             var travelAgentResult = await _travelAgentRepo.Add(travelAgentRegistration);
-            if (userResult != null && travelAgentResult != null)
+            if (userResult != null && travelAgentResult != null) 
             {
                 user = new UserDTO();
                 user.UserId = travelAgentResult.Users.UserId;
@@ -76,7 +76,7 @@ namespace SignInAndSignUp.Services
             travellerRegistration.Users.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(travellerRegistration.PasswordClear));
             travellerRegistration.Users.PasswordKey = hmac.Key;
             travellerRegistration.Users.EmailId = travellerRegistration.Email;
-            travellerRegistration.Users.Role = "Traveller";
+            travellerRegistration.Users.Role = "Admin";
             var userResult = await _userRepo.Add(travellerRegistration.Users);
 
             var travellerResult = await _travellerRepo.Add(travellerRegistration);

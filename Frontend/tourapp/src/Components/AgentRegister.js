@@ -5,53 +5,53 @@ import {Link} from "react-router-dom";
 function AgentRegister(){
     return(
      
-            <div className='tagent_register_body'>
+            <div className='agent_register_body'>
             <body>
-    <section class="container">
+    <div class="agent_container">
       <header className='registration_header'>Registration Form</header>
-      <div action="#" class="form">
+      <div action="#" class="agent_register_form">
         <div class="input-box">
-          <label>Your Name</label>
+         
           <input type="text" placeholder="Enter full name" required />
         </div>
         <div class="input-box">
-          <label>Agency Name</label>
+          
           <input type="text" placeholder="Enter full name" required />
         </div>
         <div class="input-box">
-          <label>Email Address</label>
+          
           <input type="text" placeholder="Enter email address" required />
         </div>
         <div class="column">
           <div class="input-box">
-            <label>Phone Number</label>
+           
             <input type="number" placeholder="Enter phone number" required />
           </div>
           <div class="input-box">
-            <label>Birth Date</label>
+            
             <input type="date" placeholder="Enter birth date" required />
           </div>
         </div>
         
         <div class="input-box address">
-          <label>Address</label>
+          
           <input type="text" placeholder="Enter street address" required />
           
         </div>
         <div class="input-box address">
-          <label>GST Number</label>
-          <input type="text" placeholder="Enter street address" required />
+      
+          <input type="text" placeholder="Enter GST Number" required />
           
         </div>
         <button>Submit</button>
-        <div className="account_login">
+        <div className="account_login"><br/>
         <p>
             Already have an account?{" "}
             <Link to="/login">Login here</Link>
           </p>
         </div>
       </div>
-    </section>
+    </div>
   </body>
         </div>
         

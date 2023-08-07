@@ -1,11 +1,10 @@
-*{
+
+
+.Landing-body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.Landing-body{
     background-image: url(D:\kanini\TourApplication\Frontend\tourapp\public\images\back.jpg);
     background-position: center;
     background-size: cover;
@@ -53,7 +52,7 @@ nav ul li a{
     color: #fff;
     font-weight: bold;
 }
-img{
+/* .landing_img{
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -61,11 +60,11 @@ img{
     margin-top: -7px;
     transition: 0.1s ease;
 } 
-img:hover{
+.landing_img:hover{
     border: 2px solid #fff;
-}
+} */
 
-h3{
+.landing_h3{
     color: #fff;
     margin: 80px 110px -25px;
     margin-left: -53.2%;
@@ -75,7 +74,7 @@ h3{
     letter-spacing: 1px;
 }
 
-h1{
+.landing_h1{
     color: #fff;
     margin: 0 110px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
