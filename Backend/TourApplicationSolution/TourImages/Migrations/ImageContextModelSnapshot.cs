@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TourImages.Models;
 
@@ -10,11 +9,10 @@ using TourImages.Models;
 
 namespace TourImages.Migrations
 {
-    [DbContext(typeof(TourImageContext))]
-    [Migration("20230804164208_init")]
-    partial class init
+    [DbContext(typeof(ImageContext))]
+    partial class ImageContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,13 +21,13 @@ namespace TourImages.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("TourImages.Models.TourImage", b =>
+            modelBuilder.Entity("TourImages.Models.ImageTourism", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ImageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImageId"), 1L, 1);
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
@@ -37,9 +35,12 @@ namespace TourImages.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<int>("PackageId")
+                        .HasColumnType("int");
 
-                    b.ToTable("TourImages");
+                    b.HasKey("ImageId");
+
+                    b.ToTable("ImagesTourism");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,8 +7,9 @@ function LandingPage(){
         <div className='Landing-body'>
              <div class="glass">
         <nav>
-            <h2 class="logo">KANINI TOURISM</h2>
+            <h2 class="logo">T||A</h2>
             <ul>
+                <li><Link to="/homepage">HOME</Link></li>
                 <li><Link to="/login">ADMIN</Link></li>
                 <li><Link to="/login">TRAVELLER</Link></li>
                 <li><Link to="/login">TRAVEL AGENT</Link></li>

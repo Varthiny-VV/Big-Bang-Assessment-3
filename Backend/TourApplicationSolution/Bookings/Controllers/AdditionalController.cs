@@ -1,5 +1,6 @@
 ﻿using Bookings.Interfaces;
 using Bookings.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,8 @@ namespace Bookings.Controllers
 {
     [Route("api/[controller] /[Action]")]
     [ApiController]
+    [EnableCors("MyCors")]
+
     public class AdditionalController : ControllerBase
     {
         private readonly IRepo<AdditionalTravellers, int> _travellerRepo;

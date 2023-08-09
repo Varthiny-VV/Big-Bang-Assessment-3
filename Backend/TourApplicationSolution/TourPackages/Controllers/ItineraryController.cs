@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TourPackages.Interfaces;
 using TourPackages.Models;
@@ -8,6 +9,8 @@ namespace TourPackages.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("MyCors")]
+
     public class ItineraryController : ControllerBase
     {
         private readonly IRepo<int, Itinerary> _itineraryRepo;

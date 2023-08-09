@@ -117,7 +117,7 @@ function HomePage(){
       <header class={`header ${blurHeader ? 'blur-header' : ''}`} id="header">
          <nav class="nav nav_container">
             <a href="#" class="nav__logo">
-              &nbsp; &nbsp; &nbsp;KANINI TOURISM
+              &nbsp; &nbsp; &nbsp;T||A
             </a>
 
             <div class={`nav__menu ${showMenu ? 'show-menu' : ''}`} id="nav-menu">

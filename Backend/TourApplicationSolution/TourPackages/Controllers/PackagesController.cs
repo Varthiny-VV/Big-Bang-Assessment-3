@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TourPackages.Interfaces;
 using TourPackages.Models;
@@ -8,6 +9,8 @@ namespace TourPackages.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("MyCors")]
+
     public class PackagesController : ControllerBase
     {
         private readonly IRepo<int, Package> _packageRepo;
@@ -68,6 +71,7 @@ namespace TourPackages.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Package>>> GetAllTourPackages()
+        
         {
             var result = await _packageRepo.GetAll();
             if (result != null)

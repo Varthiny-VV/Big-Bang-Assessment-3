@@ -76,7 +76,7 @@ namespace SignInAndSignUp.Services
             travellerRegistration.Users.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(travellerRegistration.PasswordClear));
             travellerRegistration.Users.PasswordKey = hmac.Key;
             travellerRegistration.Users.EmailId = travellerRegistration.Email;
-            travellerRegistration.Users.Role = "Admin";
+            travellerRegistration.Users.Role = "Traveller";
             var userResult = await _userRepo.Add(travellerRegistration.Users);
 
             var travellerResult = await _travellerRepo.Add(travellerRegistration);

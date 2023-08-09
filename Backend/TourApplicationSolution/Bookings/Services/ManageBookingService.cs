@@ -25,7 +25,7 @@ namespace Bookings.Services
                             return res;
                         return null;
                     }
-                    return null;
+                    
                 
                 var res1 = await _reservationRepo.Add(reservation);
                 if (res1 != null) return res1;

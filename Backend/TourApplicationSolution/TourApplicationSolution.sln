@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourImages", "TourImages\To
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feedbacks", "Feedback\Feedbacks.csproj", "{6AEB804C-61E3-4502-948F-12D028924FEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookings", "Bookings\Bookings.csproj", "{B0638ADD-1ED6-42A6-A41E-CC19314339BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookings", "Bookings\Bookings.csproj", "{B0638ADD-1ED6-42A6-A41E-CC19314339BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting1", "UnitTesting1\UnitTesting1.csproj", "{35F2C423-5DAE-446D-8C21-D749EA62A640}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0638ADD-1ED6-42A6-A41E-CC19314339BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35F2C423-5DAE-446D-8C21-D749EA62A640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F2C423-5DAE-446D-8C21-D749EA62A640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F2C423-5DAE-446D-8C21-D749EA62A640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F2C423-5DAE-446D-8C21-D749EA62A640}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

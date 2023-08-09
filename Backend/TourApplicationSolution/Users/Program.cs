@@ -21,6 +21,13 @@ namespace SignInAndSignUp
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors(opts =>
+            {
+                opts.AddPolicy("MyCors", options =>
+                {
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
             builder.Services.AddDbContext<Context>(opts =>
             {
                 opts.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
@@ -81,6 +88,8 @@ namespace SignInAndSignUp
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
+            app.UseCors("MyCors");
             app.UseAuthorization();
 
 

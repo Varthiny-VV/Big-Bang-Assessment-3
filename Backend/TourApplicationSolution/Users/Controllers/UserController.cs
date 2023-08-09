@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using SignInAndSignUp.Interfaces;
 using SignInAndSignUp.Models.DTO;
 using SignInAndSignUp.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace SignInAndSignUp.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [EnableCors("MyCors")]
     public class UserController : ControllerBase
     {
         private readonly IManageUser _userService;
@@ -117,7 +119,7 @@ namespace SignInAndSignUp.Controllers
         {
             try
             {
-                var agents = await _travellerRepo.GetAll();
+                var agents = await _agentRepo.GetAll();
                 if (agents != null)
                 {
                     return Ok(agents);

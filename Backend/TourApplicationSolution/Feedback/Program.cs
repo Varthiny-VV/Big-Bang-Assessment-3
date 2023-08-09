@@ -32,8 +32,9 @@ namespace Feedbacks
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
+            app.UseCors("MyCors");
             app.UseAuthorization();
-
 
             app.MapControllers();
 

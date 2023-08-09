@@ -129,6 +129,57 @@
   color: #000000;
 
 }
+
+.Toastify__toast-container {
+  z-index: 9999;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Individual toast */
+.Toastify__toast {
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Toast icon */
+.Toastify__toast-body:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Success toast */
+.Toastify__toast--success:before {
+  background-color: #4caf50;
+  border-radius: 50%;
+  content: "\2714";
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}
+
+/* Error toast */
+.Toastify__toast--error:before {
+  background-color: #f44336;
+  border-radius: 50%;
+  content: "\2716";
+  color: white;
+  text-align: center;
+  line-height: 20px;
+}
+
 /*Responsive*/
 @media screen and (max-width: 500px) {
   .traveller_register_form .column {
@@ -137,4 +188,12 @@
   .traveller_register_form :where(.gender-option, .gender) {
     row-gap: 15px;
   }
+
+  .Toastify__toast-container {
+    top: auto;
+    bottom: 1rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
 }
