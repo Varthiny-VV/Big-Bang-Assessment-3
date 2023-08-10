@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import './PackageForm.css';
 
 
 function PackageForm(){
@@ -29,10 +30,43 @@ function PackageForm(){
           
     });
 
-    const[images,setImages]=useState({
-        
-    });
+    const [images, setImages] = useState({
+      "name":"string",
+      "image":"file"
 
+});
+    const AddImages = (event) => {
+      event.preventDefault();
+    
+      // Prepare the images for upload (e.g., convert to FormData)
+      const formData = new FormData();
+      images.forEach((image, index) => {
+        formData.append(`image-${index}`, image);
+      });
+    
+      fetch("http://localhost:5038/api/UploadImages", {
+        method: "POST",
+        body: formData,
+      })
+        .then(async (response) => {
+          if (response.status === 200) {
+            console.log(response.status);
+            const data = await response.json();
+            console.log(data);
+            toast.success("Images Added! :)", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          } else {
+            toast.error("Images Not added", {
+              position: toast.POSITION.TOP_CENTER,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    
 
     const AddPackage = (event) => {
         event.preventDefault(); // Prevent form submission
@@ -232,7 +266,7 @@ function PackageForm(){
           <div className="col-12 col-lg-9 col-xl-7">
             <div className="card shadow-2-strong card-registration">
               <div className="card-body p-4 p-md-5">
-                <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Itenary</h3>
+                <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Itinerary</h3>
                 <form onSubmit={AddItenary}>
                   <div className="row">
                     
@@ -287,7 +321,8 @@ function PackageForm(){
                   <div className="row">
                     
                       <div className="form-outline">
-                        <input type="text" id="DateOfBirth" className="form-control form-control-md" placeholder="Name"/>
+                        <input type="text" id="DateOfBirth" className="form-control form-control-md" placeholder="Name" onChange={(event) => {
+                          setImages({ ...packages,name: event.target.value })   }} />
                      
                   </div>
                   </div>
@@ -296,7 +331,9 @@ function PackageForm(){
                   <div className="row">
                                       
                 <div className="form-outline">
-                  <input type="file" id="UploadFile" className="form-control form-control-md" />
+                  <input type="file" id="UploadFile" className="form-control form-control-md" onChange={(event) => {
+                    setImages([...event.target.files]);
+                  }}/>
                 </div>
               
                   </div>

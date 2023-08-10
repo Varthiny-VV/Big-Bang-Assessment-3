@@ -13,10 +13,7 @@ function TravellerPackages(props){
         }
       }, [pack]);
       const navigate = useNavigate();
-      var booknow = () => {
     
-        navigate("/booking");
-      };
 
       const handleDownloadPDF = () => {
         const input = document.getElementById("pdf-down");

@@ -16,8 +16,7 @@ import ApproveAgents from './Components/ApproveAgents';
 import ViewPackages from './Components/ViewPackages';
 import PackageForm from './Components/PackageForm';
 import TravellerLanding from './Components/TravellerLanding';
-import Booking from './Components/Booking';
-import Rough from './Components/Rough';
+import ProtectedRoutes from './Components/ProtectedRoutes/Protected';
 function App() {
   return (
     <div className="App">
@@ -31,15 +30,23 @@ function App() {
         <Route path="/traveller" element={<TravellerRegister/>} />
         <Route path="/travelagent" element={<AgentRegister/>} />
         <Route path="/contactus" element={<ContactUs/>} />
-        <Route path="/login" element={<SignInSignUp/>} />
+        <Route path="/login" element={<SignInSignUp/>} />  
         <Route path="/adminmenu" element={<AdminMenu/>} />
-        <Route path="/viewagents" element={<ViewAgents/>} />
+        <Route path="/viewagents" element={<ViewAgents/>} /> 
         <Route path="/approveagents" element={<ApproveAgents/>} />
         <Route path="/viewPacks" element={<ViewPackages/>}/>
-        <Route path="/addPack" element={<PackageForm/>}/>
+        <Route path="/addPack" element={<PackageForm/>}/>       
         <Route path="/travellerLanding" element={<TravellerLanding/>}/>
-        <Route path="/booking" element={<Booking/>}/>
-        <Route path="/rough" element={<Rough/>}/>
+        
+            
+        <Route element={<ProtectedRoutes allowedRoles={["Traveller"]} />}>
+            
+            <Route path="/travellerLanding" element={<TravellerLanding/>}/>
+            <Route element={<ProtectedRoutes allowedRoles={["Admin"]} />}>
+            <Route path="/adminmenu" element={<AdminMenu/>} />
+            <Route path="/viewagents" element={<ViewAgents/>} />
+            </Route>
+          </Route>
 
 
         </Routes>
